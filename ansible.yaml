@@ -1,0 +1,14 @@
+---
+  host : all
+  became : true   # became means the root user
+  - name : Installing the nodejs
+    ansible.builtin.apt:
+      name: Nodejs
+      state: present
+  - name : Copying the files
+    ansible.bulitin.copy:
+      src : index.html
+      dest : /etc/Nodejs.conf
+      owner : root
+      user : root
+      mode : '0777'
